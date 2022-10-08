@@ -1,6 +1,6 @@
 # noname_layout_study_4
 
-Flutter project to learn in layout development
+Flutter project to learn in layout development (mainly for Android)
 
 The design, pics, text and etc is mostly taken from the video 
 https://www.youtube.com/watch?v=mCPfzB5FjFo
