@@ -34,13 +34,18 @@ class WizardPageItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _Image(pageData: pageData),
-              _Title(pageData: pageData),
-              _Description(pageData: pageData),
-            ],
+          child: Container(
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _Image(pageData: pageData),
+                  _Title(pageData: pageData),
+                  _Description(pageData: pageData),
+                ],
+              ),
+            ),
           ),
         ),
         _NavigateButtonBar(

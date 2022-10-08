@@ -5,19 +5,22 @@ class _NavigateButtonBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              _NavigateButton(),
-            ],
-          ),
-          const _PageNumberByDots(),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        height: 70,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Align(alignment: Alignment.centerLeft, child: _NavigateButton()),
+                _PageNumberByDots(),
+                SizedBox(width: 60),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

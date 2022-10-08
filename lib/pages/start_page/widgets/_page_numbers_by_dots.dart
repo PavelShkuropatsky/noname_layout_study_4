@@ -5,17 +5,18 @@ class _PageNumberByDots extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: const [
-        SizedBox(width: 20),
-        _PageNumberDot(),
-        _PageNumberDot(),
-        _PageNumberDot(),
-        _PageNumberDot(),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          _PageNumberDot(),
+          _PageNumberDot(),
+          _PageNumberDot(),
+          _PageNumberDot(),
+        ],
+      ),
     );
   }
 }

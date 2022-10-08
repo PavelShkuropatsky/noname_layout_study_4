@@ -5,11 +5,26 @@ class _Image extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Image.network(
-        "https://i.pinimg.com/736x/d8/02/6c/d8026c50ba408e9867c0f4da74aa745f--white-bows-gift-boxes.jpg",
-        loadingBuilder: _loadingBuilder,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: SizedBox(
+              width: 350,
+              height: 350,
+              // because in Web-version this image magically refuses to load from the internet
+              child: kIsWeb
+                  ? Image.asset("assets/images/d8026c50ba408e9867c0f4da74aa745f--white-bows-gift-boxes.jpg")
+                  : Image.network(
+                      "https://i.pinimg.com/736x/d8/02/6c/d8026c50ba408e9867c0f4da74aa745f--white-bows-gift-boxes.jpg",
+                      loadingBuilder: _loadingBuilder,
+                    ),
+            ),
+          ),
+        ],
       ),
     );
   }

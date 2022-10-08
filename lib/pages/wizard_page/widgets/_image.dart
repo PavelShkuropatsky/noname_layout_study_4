@@ -10,9 +10,18 @@ class _Image extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints.tight(const Size(400, 400)),
-      child: Image.network(pageData.imageUrl, loadingBuilder: _loadingBuilder),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 350,
+            height: 350,
+            child: Image.network(pageData.imageUrl, loadingBuilder: _loadingBuilder),
+          ),
+        ],
+      ),
     );
   }
 

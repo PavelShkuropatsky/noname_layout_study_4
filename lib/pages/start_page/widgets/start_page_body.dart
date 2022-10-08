@@ -1,11 +1,17 @@
 library start_page_widgets;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 part '_image.dart';
+
 part '_navigate_button.dart';
+
 part '_navigate_button_bar.dart';
+
 part '_page_number_dot.dart';
+
 part '_page_numbers_by_dots.dart';
 
 class StartPageBody extends StatelessWidget {
@@ -20,11 +26,14 @@ class StartPageBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              _Image(),
-            ],
+          child: Container(
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [_Image()],
+              ),
+            ),
           ),
         ),
         const _NavigateButtonBar(),
