@@ -21,30 +21,25 @@ class _NavigateButtonBar extends StatelessWidget {
     return Container(
       height: 70,
       padding: const EdgeInsets.all(20),
-      child: ListView(
-        scrollDirection: Axis.vertical,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Opacity(
-                opacity: pageData.isFirst ? 0 : 1,
-                child: _NavigateButton(
-                  color: Colors.green.shade800,
-                  text: "Previous",
-                  onPress: pageData.isFirst ? null : onPrevPress,
-                ),
-              ),
-              const SizedBox(width: 30),
-              _PageNumberByDots(pageNum: pageNum),
-              const SizedBox(width: 30),
-              _NavigateButton(
-                color: pageData.isLast ? Colors.redAccent.shade400 : Colors.green.shade800,
-                text: pageData.isLast ? "Start" : "Next",
-                onPress: () => pageData.isLast ? onStartPress() : onNextPress(),
-              ),
-            ],
+          Opacity(
+            opacity: pageData.isFirst ? 0 : 1,
+            child: _NavigateButton(
+              color: Colors.green.shade800,
+              text: "Previous",
+              onPress: pageData.isFirst ? null : onPrevPress,
+            ),
+          ),
+          const SizedBox(width: 30),
+          _PageNumberByDots(pageNum: pageNum),
+          const SizedBox(width: 30),
+          _NavigateButton(
+            color: pageData.isLast ? Colors.redAccent.shade400 : Colors.green.shade800,
+            text: pageData.isLast ? "Start" : "Next",
+            onPress: () => pageData.isLast ? onStartPress() : onNextPress(),
           ),
         ],
       ),

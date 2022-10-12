@@ -33,7 +33,9 @@ class _Image extends StatelessWidget {
     if (loadingProgress == null) return child;
 
     final expectedTotalBytes = loadingProgress.expectedTotalBytes;
-    return CircularProgressIndicator(
-        value: expectedTotalBytes != null ? loadingProgress.cumulativeBytesLoaded / expectedTotalBytes : null);
+    return Center(
+      child: CircularProgressIndicator(
+          value: expectedTotalBytes != null ? loadingProgress.cumulativeBytesLoaded / expectedTotalBytes : null),
+    );
   }
 }
